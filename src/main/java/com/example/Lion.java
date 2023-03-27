@@ -1,10 +1,16 @@
 package com.example;
 
 import java.util.List;
-
+//Lion класс лев?
 public class Lion {
-
+    private Feline feline;
+    // имеет гриву
     boolean hasMane;
+    // если пол самец то грива есть иначе гривы нет
+
+    public Lion(Feline feline) {
+        this.feline = feline;
+    }
 
     public Lion(String sex) throws Exception {
         if ("Самец".equals(sex)) {
@@ -12,11 +18,11 @@ public class Lion {
         } else if ("Самка".equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
+            throw new Exception("Используйте допустимые значения пола животного - самец или самка");
         }
     }
 
-    Feline feline = new Feline();
+    // класс кошачий
 
     public int getKittens() {
         return feline.getKittens();
